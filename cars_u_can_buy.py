@@ -1,16 +1,14 @@
 
-car_names_prices = [("Deveste eight", 1795000), ("Vamos", 596000), ("Deviant", 512000), ("Schlagen GT", 1300000), 
-("Tulip", 718000), ("Itali GTO", 1965000), ("Toros", 498000), ("Neon", 1500000), ("Entity XXR", 2305000), 
-("Flash GT", 1675000)]
-
-car_names_sorted = sorted(car_names_prices)
+car_names = ["Deveste eight", "Vamos", "Deviant", "Schlagen GT", "Tulip", "Itali GTO", "Toros", "Neon", "Entity XXR", 
+"Flash GT"]
+car_prices = [1795000, 596000, 512000, 1300000, 718000, 1965000, 498000, 1500000, 2305000, 1675000]
 
 cars_u_can_buy = []
 
-def cars_can_buy(max_price):
-    for prices in car_names_sorted:
+def cars_buy(max_price):
+    for prices in car_prices:
         if max_price <= prices:
-            cars_u_can_buy.append(car_names_sorted[:1])
+            cars_u_can_buy.append(car_names[:1])
     return cars_u_can_buy
     
-print(cars_can_buy(1000000))
+print(cars_buy(1000000))
