@@ -15,7 +15,6 @@ class Apple:
     def draw(self, surface, image):
         surface.blit(image,(self.x, self.y)) 
  
- 
 class Player:
     x = [0]
     y = [0]
