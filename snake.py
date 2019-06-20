@@ -15,6 +15,7 @@ class Apple:
     def draw(self, surface, image):
         surface.blit(image,(self.x, self.y)) 
  
+ 
 class Player:
     x = [0]
     y = [0]
@@ -39,12 +40,12 @@ class Player:
  
         self.updateCount = self.updateCount + 1
         if self.updateCount > self.updateCountMax:
-
+ 
             # update previous positions
             for i in range(self.length-1,0,-1):
                 self.x[i] = self.x[i-1]
                 self.y[i] = self.y[i-1]
- 
+
             # update position of head of snake
             if self.direction == 0:
                 self.x[0] = self.x[0] + self.step
@@ -73,14 +74,14 @@ class Player:
     def draw(self, surface, image):
         for i in range(0,self.length):
             surface.blit(image,(self.x[i],self.y[i])) 
-
+ 
 class Game:
     def isCollision(self,x1,y1,x2,y2,bsize):
         if x1 >= x2 and x1 <= x2 + bsize:
             if y1 >= y2 and y1 <= y2 + bsize:
                 return True
         return False
- 
+
 class App:
  
     windowWidth = 800
@@ -109,7 +110,7 @@ class App:
     def on_event(self, event):
         if event.type == QUIT:
             self._running = False
-
+ 
     def on_loop(self):
         self.player.update()
  
@@ -119,8 +120,7 @@ class App:
                 self.apple.x = randint(2,9) * 44
                 self.apple.y = randint(2,9) * 44
                 self.player.length = self.player.length + 1
- 
- 
+
         # does snake collide with itself?
         for i in range(2,self.player.length):
             if self.game.isCollision(self.player.x[0],self.player.y[0],self.player.x[i], self.player.y[i],40):
@@ -130,7 +130,7 @@ class App:
                 exit(0)
  
         pass
- 
+    
     def on_render(self):
         self._display_surf.fill((0,0,0))
         self.player.draw(self._display_surf, self._image_surf)
@@ -156,7 +156,7 @@ class App:
  
             if (keys[K_UP]):
                 self.player.moveUp()
-            
+ 
             if (keys[K_DOWN]):
                 self.player.moveDown()
  
@@ -168,7 +168,7 @@ class App:
  
             time.sleep (50.0 / 1000.0);
         self.on_cleanup()
- 
+
 if __name__ == "__main__" :
     theApp = App()
     theApp.on_execute()
