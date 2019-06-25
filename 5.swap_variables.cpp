@@ -25,6 +25,4 @@ int main() {
     cout << "c = " << c << " and d = " << d << endl;
 
     return 0;
-
-
 }
