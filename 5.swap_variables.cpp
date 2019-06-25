@@ -14,7 +14,7 @@ int main() {
     cout << "a = " << a << "and b = " << b << endl;
 
     int c = 15, d = 20;
-    cout << "Before swap: " << endl;
+    cout << "\nBefore swap: " << endl;
     cout << "c = " << c << "and d = " << d << endl;
 
     c = c + d;
