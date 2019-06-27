@@ -1,26 +1,26 @@
 #include <iostream>
 using namespace std;
 
-char square[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9,};
+char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
 
 int checkwin();
 void board();
 
 int main()
 {
-        int player = 1,i,choice;
+	int player = 1,i,choice;
 
     char mark;
     do
     {
         board();
-        player = (player % 2)?1:2;
+        player=(player%2)?1:2;
 
-        cout << "Player " << player << ", choose a slot: ";
+        cout << "Player " << player << ", enter a number:  ";
         cin >> choice;
 
-        mark = (player == 1)? 'x' : '0';
-        
+        mark=(player == 1) ? 'X' : 'O';
+
         if (choice == 1 && square[1] == '1')
 
             square[1] = mark;
@@ -72,7 +72,9 @@ int main()
     return 0;
 }
 
-int checkwin() {
+
+int checkwin()
+{
     if (square[1] == square[2] && square[2] == square[3])
 
         return 1;
@@ -105,10 +107,12 @@ int checkwin() {
     else
         return -1;
 }
+
+
 void board()
 {
     system("cls");
-    cout << "\n\n\Hungry? Eat a Tic Tac\n\n";
+    cout << "\n\n\tHungry? Eat a Tic Tac\n\n";
 
     cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
     cout << endl;
@@ -128,3 +132,4 @@ void board()
 
     cout << "     |     |     " << endl << endl;
 }
+
